@@ -1,15 +1,32 @@
-@media (prefers-reduced-motion: no-preference) {
-  .icon-2{
-    animation: icon-spin 1s infinite linear;
+@media screen and (max-width: 1920px){
+  @media (prefers-reduced-motion: no-preference) {
+    .icon-2{
+      animation: icon-spin 1s infinite linear;
+    }
+  }
+  
+  @keyframes icon-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+      
   }
 }
 
-@keyframes icon-spin {
-  from {
-    transform: rotate(0deg);
+
+
+@media screen and (max-width: 500px){
+  .icon{
+    width: 50px;
+    height: 50px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .icon-2{
+    width: 50px;
+    height: 50px;
   }
-    
+  
 }

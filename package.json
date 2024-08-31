@@ -2,20 +2,26 @@
   "name": "my-cv",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://CarlosHernandezLl.github.io/my-cv",
   "dependencies": {
+    "@splinetool/react-spline": "^4.0.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "boxicons": "^2.1.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
+    "react-tsparticles": "^2.12.2",
+    "tsparticles": "^3.5.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -36,6 +42,7 @@
     ]
   },
   "devDependencies": {
-    "@iconify/react": "^4.1.1"
+    "@iconify/react": "^4.1.1",
+    "gh-pages": "^6.1.1"
   }
 }
