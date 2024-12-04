@@ -1,0 +1,24 @@
+
+
+form {
+    
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 400px;
+    padding: 20px;
+    border-radius: 10px;
+
+    box-shadow: 0 0 10px #000;
+}
+
+#outlined-basic, #outlined-multiline-flexible{
+    color: aqua !important;
+}
+
+@media screen and (min-width: 1000px) {
+    form {
+        width: 400px;
+        height: 400px;
+    }
+}
