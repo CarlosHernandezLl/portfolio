@@ -5,7 +5,7 @@ import 'boxicons/css/boxicons.min.css';
 import Navigation from './components/Navigation';
 
 import background from './icons/bg.gif'
-import fondo3 from './icons/project2 (2).avif'
+import fondo3 from './icons/catchthem.avif'
 import Spline from '@splinetool/react-spline';
 import "./styles/Presentation.css";
 import "./styles/About.css";
@@ -91,8 +91,8 @@ function App() {
       </section>
 
       {/*Skills*/}
-      <section id='skills' className='
-      xl:h-auto mt-auto relative bg-primary pt-16'>
+      <section id='skills'
+        className='xl:h-auto mt-auto relative bg-primary pt-16'>
 
         <h2 className='text-xl xl:text-4xl font-normal text-[#049FFF] text-center'>SKILLS</h2>
         <div className='flex flex-col relative justify-center items-center content-center z-10 pt-4 xl:pt-12'>
