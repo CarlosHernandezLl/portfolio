@@ -6,25 +6,21 @@ module.exports = {
   darkMode: "class",
   theme: {
 
+    fontFamily: {
+      poppins: ['Poppins', 'sans-serif'],
+      montserrat: ['Montserrat', 'sans-serif'],
+      roboto: ['Roboto', 'sans-serif']
+    },
+
     colors: {
-      primary: '#121921',
-      secondary: '#C48CB3',
-      terciary: '#E5C9D7',
-      cuaternary: '#83A6CE',
-      quinary: '#26415E',
-      senary: '#0B1B32',
+      bg: '#003E74',
+      titledark: '#0B80FF',  
+      title: '#98C7FA',
+      subtitle: '#D9FF00',
+      icon: '#FFC947',
+      buttom: '#007BFF',
       white: '#FFFFFF',
       black: '#000000',
-      gray: '#D3D3D3',
-      gray2: '#A9A9A9',
-      gray3: '#808080',
-      gray4: '#696969',
-      gray5: '#778899',
-      gray6: '#708090',
-      gray7: '#2F4F4F',
-      gray8: '#708090',
-      gray9: '#778899',
-      gray10: '#708090',
       custom1: 'rgba(var(--black), 0.8)',
       //mantener los colores por defecto tmb
       transparent: 'transparent',

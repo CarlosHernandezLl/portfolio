@@ -1,24 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { TextField, Button, Icon } from '@mui/material';
-import { createTheme } from '@mui/material/styles';
-import { ThemeProvider } from '@emotion/react';
-import { CardAnimated } from './CardAnimated.jsx';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { createMuiTheme } from '@mui/material/styles';
 import { useState } from 'react';
 import Alert from '@mui/material/Alert';
 import CheckIcon from '@mui/icons-material/Check';
 import { addDoc } from 'firebase/firestore';
 import { collection } from 'firebase/firestore';
 import { db } from '../firebase.js';
+import ThemeContext from '../ThemeContext.js';
 
 
-const darkTheme = createTheme({
+const darktheme = createTheme({
+
     palette: {
         mode: 'dark',
-    },
+    }
+
 });
 
 
 export const ContactForm = () => {
+
+    const { theme } = useContext(ThemeContext);
 
     const [formul, setFormul] = useState({
         name: '',
@@ -59,8 +63,8 @@ export const ContactForm = () => {
     }
 
     return (
-        <ThemeProvider theme={darkTheme}>
-            <form className='bg-primary h-auto' onSubmit={handleSubmit}>
+        <ThemeProvider theme={darktheme}>
+            <form onSubmit={handleSubmit}>
                 {send && (
                     <Alert icon={<CheckIcon />} severity="success" style={{ marginBottom: '16px' }}>
                         Your message was successful.
@@ -98,7 +102,7 @@ export const ContactForm = () => {
                 <br />
                 <Button variant="outlined" type='submit'>Send</Button>
             </form>
-
         </ThemeProvider>
+
     )
 }
