@@ -8,11 +8,11 @@ import CheckIcon from '@mui/icons-material/Check';
 import { addDoc } from 'firebase/firestore';
 import { collection } from 'firebase/firestore';
 import { db } from '../firebase.js';
-import ThemeContext from '../ThemeContext.js';
+import ThemeContext from '../ThemeContext.jsx';
+import '../styles/Contact.css';
 
 
 const darktheme = createTheme({
-
     palette: {
         mode: 'dark',
     }
@@ -22,7 +22,7 @@ const darktheme = createTheme({
 
 export const ContactForm = () => {
 
-    const { theme } = useContext(ThemeContext);
+    // const { theme } = useContext(ThemeContext);
 
     const [formul, setFormul] = useState({
         name: '',
