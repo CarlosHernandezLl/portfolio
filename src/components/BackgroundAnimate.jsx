@@ -61,8 +61,8 @@ export default function BackgroundAnimate() {
             <spotLight intensity={1} angle={0.2} penumbra={5} position={[5, 40, 40]} />
             <Sphere />
             <Grading />
-            <Environment preset="night" backgroundRotation={[7, 2, 1]} backgroundIntensity={4} background blur={0.5} />
-            <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={2} />
+            <Environment preset="night" backgroundRotation={[4, 2, 1]} backgroundIntensity={2.5} background blur={0.5} />
+            <OrbitControls enableRotate={false} enableZoom={false} autoRotate autoRotateSpeed={5} />
         </Canvas>
 
 

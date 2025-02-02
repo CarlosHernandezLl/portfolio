@@ -77,7 +77,7 @@ const HeroSection = () => {
             <h1 className='text-4xl lg:text-7xl font-bold text-white md:pointer-events-none'>       PER</h1>
           </div>
         </div>
-        <p className="text-lg text-white mt-10 mb-10 z-50 md:pointer-events-none ">{paragraph}</p>
+        <p className="text-xl text-amber-100 mt-10 mb-10 z-50 md:pointer-events-none ">{paragraph}</p>
         <Button>LinkedIn</Button>
       </main>
     </>
