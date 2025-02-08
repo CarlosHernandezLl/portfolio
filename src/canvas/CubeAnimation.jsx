@@ -4,7 +4,7 @@ import '../styles/CubeAnimation.css'
 import { useAnimationFrame } from "motion/react"
 import { useRef } from "react";
 
-export default function UseAnimationFrame() {
+export default function CubeAnimation() {
     const refe = useRef();
 
     useAnimationFrame((t) => {
@@ -16,7 +16,7 @@ export default function UseAnimationFrame() {
     })
 
     return (
-        <div className="container">
+        <span className="container">
             <div className="cube" ref={refe}>
                 <div className="side front" />
                 <div className="side left" />
@@ -25,7 +25,7 @@ export default function UseAnimationFrame() {
                 <div className="side bottom" />
                 <div className="side back" />
             </div>
-        </div>
+        </span>
 
     )
 }

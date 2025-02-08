@@ -1,11 +1,4 @@
 * {
-    /* --hue-1-transparent: rgba(255, 201, 71, 0.5);
-    --hue-2-transparent: rgba(133, 105, 39, 0.5);
-    --hue-3-transparent: rgba(58, 52, 39, 0.5);
-    --hue-4-transparent: rgba(70, 67, 62, 0.5);
-    --hue-5-transparent: rgba(67, 27, 211, 0.5);
-    --hue-6-transparent: rgba(148, 112, 28, 0.5); */
-
     --hue-1-transparent: rgba(0, 102, 204, 0.7);
     /* Azul brillante */
     --hue-2-transparent: rgba(0, 77, 153, 0.7);
@@ -22,16 +15,15 @@
 }
 
 .container {
-    perspective: 500px;
-    width: 100px;
-    height: 100px;
+    perspective: 1000px;
+    width: 00px;
+    height: 00px;
     position: absolute;
-
 }
 
 .cube {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     position: relative;
     transform-style: preserve-3d;
 
