@@ -41,16 +41,16 @@ const Swrapper = (Component, idName) => function HOC() {
             initial="hidden"
             whileInView="show"
             viewport={{
-                once: false,
+                once: true,
                 amount: 0.25
             }}
-            className="min-h-screen w-screen px-10 sm:px-20 lg:px-24 xl:px-40 2xl:px-96 pt-40"
-        >
+            className="
+             w-screen px-10 sm:px-20 lg:px-24 xl:px-40 2xl:px-96 py-16">
             <span className="hash-span" id={idName}>
                 &nbsp;
             </span>
             <Component />
-        </motion.section>
+        </motion.section >
     )
 }
 

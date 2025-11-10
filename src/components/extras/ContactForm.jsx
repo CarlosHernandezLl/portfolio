@@ -79,8 +79,12 @@ export const ContactForm = () => {
                     duration: 0.5
                 }
             }}
+            viewport={{
+                once: true,
+                amount: 0.25
+            }}
         >
-            
+
             <ThemeProvider theme={darktheme}>
                 <form onSubmit={handleSubmit}>
                     {
