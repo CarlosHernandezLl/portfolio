@@ -1,11 +1,65 @@
 import { motion } from "motion/react";
-import { paragraph3 } from "../../constants";
 import { ContactForm } from '../extras/ContactForm';
 import BackgroundAnimate from '../../canvas/BackgroundAnimate';
 import Swrapper from "../extras/Swrapper";
+import { useState } from "react";
+import { Send, Check, Mail, Phone, MapPin, Github, Linkedin, Twitter } from "lucide-react";
+
 
 
 const Contact = () => {
+
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+    });
+
+    const [formErrors, setFormErrors] = useState({});
+    const [formStatus, setFormStatus] = useState(''); // 'success' or 'error'
+
+    const validateForm = () => {
+        const errors = {};
+
+        if (!formData.name.trim()) {
+            errors.name = 'Name is required.';
+        }
+        if (!formData.email.trim()) {
+            errors.email = 'Email is required.';
+        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+            errors.email = 'Email is invalid.';
+        }
+        if (!formData.subject.trim()) {
+            errors.subject = 'Subject is required.';
+        }
+        if (!formData.message.trim()) {
+            errors.message = 'Message is required.';
+        }
+        return errors;
+    };
+
+    const handleSubmit = async () => {
+        const errors = validateForm();
+        if (Object.keys(errors).length > 0) {
+            setFormErrors(errors);
+            return;
+        }
+        // Simulate form submission
+        setFormStatus('success');
+        setFormData({
+            name: '',
+            email: '',
+            subject: '',
+            message: ''
+        }); setFormErrors({});
+    }
+    
+    const goToSocialMedia = (link) => {
+        window.open(link, '_blank');
+    }
+
+
     return (
 
         < section id="contact" className="py-24 px-6" >
@@ -14,11 +68,10 @@ const Contact = () => {
                     Let's Work Together
                 </h2>
                 <p className="text-xl text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-                    Have a project in mind? I'd love to hear about it. Send me a message and let's create something amazing together.
+                    Whether you have a project in mind, need assistance, or just want to say hello, feel free to reach out. I'm always open to discussing new opportunities and collaborations. Looking forward to connecting with you!
                 </p>
 
                 <div className="grid md:grid-cols-3 gap-8">
-                    {/* Contact Form */}
                     <div className="md:col-span-2 backdrop-blur-lg bg-white/5 rounded-3xl p-8 md:p-10 border border-cyan-500/20 shadow-2xl">
                         <div className="space-y-6">
                             <div>
@@ -131,16 +184,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <p className="text-sm text-gray-400 mb-1">Email</p>
-                                        <p className="text-white font-medium">hello@janedoe.com</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start gap-4">
-                                    <div className="p-3 bg-cyan-500/20 rounded-lg">
-                                        <Phone className="w-5 h-5 text-cyan-400" />
-                                    </div>
-                                    <div>
-                                        <p className="text-sm text-gray-400 mb-1">Phone</p>
-                                        <p className="text-white font-medium">+1 (555) 123-4567</p>
+                                        <p className="text-white font-medium">carlosllaocua@gmail.com</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
@@ -149,7 +193,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <p className="text-sm text-gray-400 mb-1">Location</p>
-                                        <p className="text-white font-medium">San Francisco, CA</p>
+                                        <p className="text-white font-medium">Lima, Peru</p>
                                     </div>
                                 </div>
                             </div>
@@ -159,12 +203,10 @@ const Contact = () => {
                             <h3 className="text-xl font-bold mb-6 text-cyan-300">Follow Me</h3>
                             <div className="grid grid-cols-2 gap-3">
                                 {[
-                                    { Icon: Github, label: 'GitHub', link: 'github.com' },
-                                    { Icon: Linkedin, label: 'LinkedIn', link: 'linkedin.com' },
-                                    { Icon: Twitter, label: 'Twitter', link: 'twitter.com' },
-                                    { Icon: Mail, label: 'Email', link: 'email' }
+                                    { Icon: Github, label: 'GitHub', link: 'https://github.com/CarlosHernandezLl' },
+                                    { Icon: Linkedin, label: 'LinkedIn', link: 'https://www.linkedin.com/in/carloshernandezll/' },
                                 ].map(({ Icon, label, link }) => (
-                                    <button
+                                    <button onClick={() => goToSocialMedia(link)}
                                         key={label}
                                         className="p-4 bg-cyan-500/20 rounded-xl hover:bg-cyan-500/30 transition-all hover:scale-105 border border-cyan-500/30 flex flex-col items-center gap-2 group"
                                     >
@@ -175,12 +217,6 @@ const Contact = () => {
                             </div>
                         </div>
 
-                        <div className="backdrop-blur-lg bg-white/5 rounded-3xl p-6 border border-cyan-500/20">
-                            <h3 className="text-xl font-bold mb-4 text-cyan-300">Response Time</h3>
-                            <p className="text-gray-400 text-sm leading-relaxed">
-                                I typically respond to all inquiries within 24-48 hours. Looking forward to hearing from you!
-                            </p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -189,4 +225,4 @@ const Contact = () => {
     )
 }
 
-export default Swrapper(Contact, "Contact");
+export default Contact;

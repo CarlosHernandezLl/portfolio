@@ -3,7 +3,6 @@ import { DirectionalLight, DoubleSide, MeshBasicMaterial, MeshPhysicalMaterial, 
 import { Effects, Environment, OrbitControls, Preload, useTexture } from '@react-three/drei';
 
 // import {cube} from '../../src/icons/cubicle-99.CUBE'
-import water from '../assets/water.webp'
 import { Blob } from './Blob';
 import { Suspense } from 'react';
 

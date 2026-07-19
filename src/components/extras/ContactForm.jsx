@@ -7,8 +7,6 @@ import CheckIcon from '@mui/icons-material/Check';
 import { addDoc } from 'firebase/firestore';
 import { collection } from 'firebase/firestore';
 import { db } from '../../firebase.js';
-import ThemeContext from '../../ThemeContext.jsx';
-import '../../styles/Contact.css';
 import { motion } from 'framer-motion';
 
 

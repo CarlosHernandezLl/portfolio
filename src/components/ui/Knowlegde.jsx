@@ -1,81 +1,80 @@
-import { motion } from "motion/react";
-import { paragraph2 } from "../../constants";
-import { icons, colors } from "../../constants/index";
-import Swrapper from "../extras/Swrapper";
+import React from 'react';
+// Importamos tus componentes vectoriales directamente desde tu archivo de extras
+import {
+  DeviconAngular,
+  DeviconTypescript,
+  DeviconJavascript,
+  DeviconHtml5,
+  DeviconCss3,
+  DeviconPython,
+  DeviconCplusplus,
+  DeviconJava,
+  DeviconPostgresql,
+  DeviconGit,
+  DeviconFigma,
+  DeviconGithub
+} from '../extras/Icons.jsx';
 
-const Knowledge = () => {
+// Arreglo local con la configuración de tus herramientas y sus dimensiones adaptativas (100% del contenedor padre)
+const techStack = [
+  { name: 'Angular', icon: <DeviconAngular width="100%" height="100%" /> },
+  { name: 'TypeScript', icon: <DeviconTypescript width="100%" height="100%" /> },
+  { name: 'JavaScript', icon: <DeviconJavascript width="100%" height="100%" /> },
+  { name: 'HTML5', icon: <DeviconHtml5 width="100%" height="100%" /> },
+  { name: 'CSS3', icon: <DeviconCss3 width="100%" height="100%" /> },
+  { name: 'Python', icon: <DeviconPython width="100%" height="100%" /> },
+  { name: 'C++', icon: <DeviconCplusplus width="100%" height="100%" /> },
+  { name: 'Java', icon: <DeviconJava width="100%" height="100%" /> },
+  { name: 'PostgreSQL', icon: <DeviconPostgresql width="100%" height="100%" /> },
+  { name: 'Git', icon: <DeviconGit width="100%" height="100%" /> },
+  { name: 'Figma', icon: <DeviconFigma width="100%" height="100%" /> },
+  { name: 'GitHub', icon: <DeviconGithub width="100%" height="100%" /> },
+];
 
-    return (
-        <>
-            <motion.span
-                initial={{
-                    opacity: 0,
-                    x: -100,
-                }}
-                whileInView={{
-                    opacity: 1,
-                    x: 0,
-                    transition: {
-                        delay: 0.2,
-                        duration: 0.5
-                    }
-                }}
-                viewport={
-                    {
-                        once: true,
-                        amount: 0.25
-                    }
-                }
+export default function Knowlegde({ skillsVisible = true }) {
+  return (
+    <section id="skills" className="bg-[var(--bg-main)] relative overflow-hidden w-full">
+      {/* Contenedor estándar (1024px) heredado del nuevo theme.css */}
+      <div className="section-container container-standard relative z-10">
 
-                className="flex flex-row space-x-4 items-center text-[#1fc9d0]">
+        {/* Encabezado del módulo */}
+        <div className="flex flex-col items-center text-center">
+          <span className="section-tag-mono">Capabilities</span>
+          <h2 className="text-gradient-premium mt-2">
+            Tech Stack & Expertise
+          </h2>
+        </div>
 
-                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" className="size-6 sm:size-8 md:size-10 lg:size-12 xl:size-14"
-                    viewBox="0 0 24 24">
-                    <rect width="24" height="24" fill="none" />
-                    <path fill="none" stroke="#1fc9d0" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16.5 19a2.5 2.5 0 1 0 0-5a2.5 2.5 0 0 0 0 5M10 5l2-2m-4.5 7a2.5 2.5 0 1 0 0-5a2.5 2.5 0 0 0 0 5m.5 6l8-8M5.5 21a2.5 2.5 0 1 0 0-5a2.5 2.5 0 0 0 0 5m13-13a2.5 2.5 0 1 0 0-5a2.5 2.5 0 0 0 0 5M12 21l2-2" />
-                </svg>
-                <motion.h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl
-                text-pretty font-bold pt-0 ">{paragraph2}</motion.h2>
-            </motion.span>
-            <motion.div
-                initial={{
-                    opacity: 0,
-                    x: 0,
-                }}
-                whileInView={{
-                    opacity: 1,
-                    x: 0,
-                    transition: {
-                        delay: 0.2,
-                        duration: 0.5
-                    }
-                }}
-                viewport={
-                    {
-                        once: true,
-                        amount: 0.25
-                    }
-                }
+        {/* Contenedor Bento con cuadrícula simétrica (2 filas de 6 íconos en escritorio) */}
+        <div className="card-premium">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8 sm:gap-10 justify-items-center">
+            {techStack.map((tech, idx) => (
+              <div
+                key={idx}
+                className={`flex flex-col items-center justify-center transition-all duration-500 ease-out transform group select-none ${skillsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  }`}
+                style={{ transitionDelay: `${idx * 40}ms` }}
+              >
+                {/* 
+                  Contenedor del Icono:
+                  - Controla el tamaño real (w-12 h-12 md:w-14 md:h-14).
+                  - Inicia en escala de grises y opacidad media.
+                  - Al hacer hover, recupera el 100% de color y se escala suavemente un 10% hacia adelante.
+                */}
+                <div className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110 drop-shadow-sm group-hover:drop-shadow-md">
+                  {tech.icon}
+                </div>
 
-                className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6
-        lg:grid-cols-7
-        xl:grid-cols-8
-        2x:grid-cols-9
-        gap-10 relative sm:gap-14 h-auto pt-10 justify-center items-center mt-3">
-                {
-                    icons.map((icon, index) => (
+                {/* Etiqueta de texto inferior */}
+                <p className="mt-3 text-center text-xs font-mono tracking-wide text-[var(--text-muted)] group-hover:text-[var(--text-main)] transition-colors duration-200">
+                  {tech.name}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
 
-                        <div className={`${colors[index]} relative w-24 h-24 shadow-xl rounded-xl`} >
-                            <span className="absolute top-1/2 left-1/2 -translate-1/2">
-                                {icon.icon}
-                            </span>
-                        </div>
-                    ))
-                }
-            </motion.div>
-        </>
-
-    )
+      </div>
+    </section>
+  );
 }
-
-export default Swrapper(Knowledge, "Knowledge");
