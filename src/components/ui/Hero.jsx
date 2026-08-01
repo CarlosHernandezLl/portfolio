@@ -3,6 +3,8 @@ import { ChevronDown, ArrowRight, Download } from 'lucide-react';
 import { heroSection } from '../../constants';
 import Button from './Button';
 import cvPdf from '../../assets/cv-carlos-hernandez.pdf';
+import HeroBackground3D from './HeroBackground3D';
+import StarsCanvas from '../../canvas/Stars';
 
 const achievements = [
     // { number: '1', label: 'Years of Experience' },
@@ -41,7 +43,9 @@ const HeroSection = () => {
           nunca choque con el header ni el indicador de scroll.
         */
         <section id="hero" className="min-h-screen flex items-center justify-center px-6 !py-28 md:!py-36 relative overflow-hidden bg-[var(--bg-main)] text-[var(--text-main)] w-full">
-
+            {/* Animación 3D */}
+            {/* <StarsCanvas /> */}
+            <HeroBackground3D />
             {/* Resplandores de fondo Geist */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute w-[600px] h-[600px] bg-indigo-500/5 dark:bg-indigo-500/[0.02] rounded-full blur-[140px] -top-48 -left-48"></div>

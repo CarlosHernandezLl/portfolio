@@ -12,7 +12,7 @@ import { pngs } from '../assets/index.js';
 const heroSection = {
     author: "Carlos Hernandez",
     role: "Full Stack Developer | Aspiring DevSecOps Engineer",
-    description: "Engineering student. From the line of code to cloud configuration, with security as my primary focus. I'm looking for a role where my full-stack skills can be applied to robust and proactive DevSecOps solutions.",
+    description: "From the line of code to cloud configuration, with security as my primary focus. I'm looking for a role where my full-stack skills can be applied to robust and proactive DevSecOps solutions.",
     slogan: "Code. Secure. Deploy.",
     // footerDescription: "© 2025 Carlos Hernandez."
 };
